@@ -1876,6 +1876,14 @@ jobs:
           GH_HOST="${GITHUB_SERVER_URL#https://}"
           GH_HOST="${GH_HOST#http://}"
           echo "GH_HOST=${GH_HOST}" >> "$GITHUB_ENV"
+      - name: Ensure workflow install note file exists
+        shell: bash
+        run: |
+          WORKFLOW_INSTALL_NOTE_PATH="${RUNNER_TEMP}/gh-aw/md/workflow_install_note.md"
+          mkdir -p "$(dirname "${WORKFLOW_INSTALL_NOTE_PATH}")"
+          if [ ! -f "${WORKFLOW_INSTALL_NOTE_PATH}" ]; then
+            touch "${WORKFLOW_INSTALL_NOTE_PATH}"
+          fi
       - name: Process Safe Outputs
         id: process_safe_outputs
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
@@ -1903,4 +1911,3 @@ jobs:
             /tmp/gh-aw/safe-output-items.jsonl
             /tmp/gh-aw/temporary-id-map.json
           if-no-files-found: ignore
-
