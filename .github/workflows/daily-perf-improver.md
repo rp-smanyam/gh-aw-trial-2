@@ -1,4 +1,5 @@
 ---
+engine: claude
 description: |
   A performance-focused repository assistant that runs regularly (daily by default) to identify and implement performance improvements.
   Can also be triggered on-demand via '/perf-assist <instructions>' to perform specific tasks.
