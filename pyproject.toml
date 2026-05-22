@@ -1,0 +1,223 @@
+[project]
+name = "agent-leasing"
+version = "0.1.0"
+description = "Agent Leasing"
+readme = "README.md"
+authors = [
+    { email = "ira.waxberg@realpage.com" }
+]
+requires-python = ">=3.13.1,<3.14"
+dependencies = [
+    "lumina-common @ git+ssh://git@github.com/RealPage/lumina-ai-workforce-agents@0.0.3#subdirectory=lumina-common",
+    "asgi-correlation-id>=4.3.4",
+    "cashews[redis]>=7.4.1",
+    "fastapi[standard]>=0.115.12",
+    "httpx>=0.28.1",
+    "nicegui>=3.6.1",
+    "openai-agents[viz,voice]>=0.17.1,<0.18.0",
+    "openai>=2.36.0,<3",
+    "opentelemetry-exporter-otlp-proto-grpc>=1.38.0",
+    "opentelemetry-exporter-otlp-proto-http>=1.38.0",
+    "opentelemetry-instrumentation-fastapi>=0.56b0",
+    "opentelemetry-instrumentation-httpx>=0.56b0",
+    "opentelemetry-instrumentation-openai-v2>=2.1b0",
+    "opentelemetry-instrumentation-openai-agents-v2>=0.1.0",
+    "opentelemetry-sdk>=1.38.0",
+    "opentelemetry-semantic-conventions>=0.56b0",
+    "python-dotenv>=1.1.0",
+    "structlog>=25.3.0",
+    "pydantic>=2.11",
+    "pydantic-settings>=2.11",
+    "pyjwt>=2.10.1",
+    "numpy>=2.3.1",
+    "num2words>=0.5.14",
+    "sounddevice>=0.5.2",
+    "twilio>=9.3.2",
+    "urlextract>=1.9.0",
+    "elevenlabs>=2.6.0",
+    "jinja2>=3.1.6",
+    "fastmcp>=2.11.2",
+    "scipy>=1.11.0",
+    "pydub",
+    "fastavro>=1.11.1",
+    "confluent-kafka[avro,schemaregistry]>=2.11.0",
+    "websockets>=15.0.1",
+    "presidio-analyzer>=2.2.35",
+    "presidio-anonymizer>=2.2.35",
+    "phonenumbers>=8.13.0",
+    "spacy>=3.8.7",
+    "orjson>=3.10.18",
+    "noisereduce>=3.0.3",
+    "audioop-lts>=0.2.2",
+    "python-dateutil>=2.9.0.post0",
+    "opentelemetry-instrumentation-system-metrics>=0.60b1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "pytest-cov>=6.1.1",
+    "pytest-repeat>=0.9.4",
+    "pytest-retry>=1.7.0",
+    "pytest-xdist>=3.8.0",
+    "ruff>=0.11.7",
+    "pip-system-certs>=4.0.0",
+    "openevals>=0.1.0",
+    "langsmith[openai-agents,otel]>=0.4.25",
+    "pytest-xdist>=3.6.1",
+    "pre-commit>=4.2.0",
+    "httpx-sse>=0.4.1",
+    "vulture>=2.14",
+    "locust>=2.43.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+server = "agent_leasing.server:main"
+cli-streaming = "agent_leasing.cli_streaming:main"
+cli-text = "agent_leasing.cli_text:main"
+twilio = "agent_leasing.twilio:main"
+cli-render-prompt = "agent_leasing.cli_render_prompt:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_leasing"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.coverage.run]
+omit = [
+    "src/examples/*",
+    "static/*",
+    "src/agent_leasing/static/*",
+    "src/agent_leasing/chatbot.py",
+    "src/agent_leasing/util/logging_configuration.py",
+    "src/agent_leasing/util/otel_configuration.py",
+    "src/agent_leasing/util/langsmith_configuration.py",
+    "src/agent_leasing/agent/prospect_simple/agent.py",
+    "src/agent_leasing/agent/prospect_single_agent/prospect_single_agent.py",
+    "src/agent_leasing/agent/prospect_single_agent/voice_workflow.py",
+    "src/agent_leasing/agent/resident_responder/*",
+    "src/agent_leasing/util/audio_util.py",
+    "src/agent_leasing/voice_stream_session.py",
+    "src/agent_leasing/cli.py",
+    "src/agent_leasing/voice_ui_handler.py",
+    "src/agent_leasing/voice_ui/*",
+    "src/agent_leasing/cli_streaming.py",
+    "src/agent_leasing/cli_text.py",
+    "tests/integration/agent/resident/resident_responder/*",
+    "tests/integration/agent/thinkers/*",
+    "tests/integration/agent/thinkers/community/*",
+    "tests/integration/agent/thinkers/facilities/*",
+    "tests/integration/agent/thinkers/guest_parking/*",
+    "tests/integration/agent/thinkers/handoff_to_human/*",
+    "tests/integration/agent/thinkers/packages/*",
+    "tests/integration/agent/thinkers/policy_and_ledger/*",
+    "tests/integration/agent/thinkers/qna/*",
+    "src/agent_leasing/kafka/sample_producer.py"]
+source = ["src"]
+
+[tool.coverage.html]
+directory = "coverage"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+asyncio_mode = "auto"
+log_level = "WARNING"
+asyncio_default_fixture_loop_scope = "function"
+asyncio_default_test_loop_scope = "function"
+filterwarnings = [
+    # This is a warning that is expected to happen: we have an async filter that raises an exception
+    "ignore:coroutine 'test_async_input_filter_fails.<locals>.invalid_input_filter' was never awaited:RuntimeWarning",
+]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+#addopts = "-ra -q -vv --cov --cov-report term:skip-covered --color yes"
+addopts = "--disable-pytest-warnings -p no:langsmith_plugin"
+markers = [
+    "serial: mark test as serial (not to be run in parallel)",
+    "llm_judge: mark test as using LLM-as-judge (non-deterministic, uses pool threshold for pass/fail)",
+    "pool(threshold, name): pool parametrized cases; pass if >= threshold pct of cases pass",
+    "parallel1: auto-assigned shard for CI parallelization",
+    "parallel2: auto-assigned shard for CI parallelization",
+    "parallel3: auto-assigned shard for CI parallelization",
+    "parallel4: auto-assigned shard for CI parallelization",
+    "parallel5: auto-assigned shard for CI parallelization",
+    "parallel6: auto-assigned shard for CI parallelization",
+    "parallel7: auto-assigned shard for CI parallelization",
+    "parallel8: auto-assigned shard for CI parallelization",
+    "parallel9: auto-assigned shard for CI parallelization",
+    "parallel10: auto-assigned shard for CI parallelization",
+    "parallel11: auto-assigned shard for CI parallelization",
+    "parallel12: auto-assigned shard for CI parallelization",
+    "parallel13: auto-assigned shard for CI parallelization",
+    "parallel14: auto-assigned shard for CI parallelization",
+    "parallel15: auto-assigned shard for CI parallelization",
+]
+
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self\\.debug",
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+    # Don't complain about abstract methods, they aren't run:
+    "@(abc\\.)?abstractmethod",
+    # Don't complain about TYPE_CHECKING blocks
+    "if TYPE_CHECKING:",
+]
+ignore_errors = true
+
+[tool.ruff]
+line-length = 119
+exclude = [
+    "fortify.py",
+    "scripts/",
+    "static/",
+    "src/examples",
+    "src/agent_leasing/start_agent.py/",
+    "src/agent_leasing/.nicegui/",
+    "src/agent_leasing/util/logging_configuration.py",
+    "tests/http/",
+    "aspire-app/",
+    ".venv/",
+]
+lint.select = [
+    "E", # pycodestyle
+    "F", # pyflakes
+    "I", # isort
+    "T201",
+    "UP",
+]
+lint.ignore = [
+    "UP006",
+    "UP007",
+    # We actually do want to import from typing_extensions
+    "UP035",
+    # Relax the convention by _not_ requiring documentation for every function parameter.
+    "D417",
+    "E501",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["agent_leasing"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "UP"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

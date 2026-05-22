@@ -1,0 +1,96 @@
+PUT localhost:1080/mockserver/expectation
+Content-Type: application/json
+
+[
+    {
+      "httpRequest": {
+        "method": "POST",
+        "path": "/renter-read"
+      },
+      "httpResponse": {
+        "body": "{\"records\": [{\"extras\": {\"loftLiving\": {\"modules\": [\"PAYMENT_CENTER\",\"PARKING_PASS\",\"PACKAGES\",\"EVENTS\",\"MR\"]}}}]}",
+        "headers": [
+           {
+            "name": "Content-Type",
+            "values": ["application/json"]
+            }
+        ]
+      }
+    },
+      {
+      "httpRequest": {
+        "method": "POST",
+        "path": "/login/identity/connect/token"
+      },
+      "httpResponse": {
+        "body": "{\"access_token\": \"token\",\"expires_in\": 3600,\"token_type\": \"Bearer\", \"scope\": \"scope\"}",
+        "headers": [
+           {
+            "name": "Content-Type",
+            "values": ["application/json"]
+            }
+        ]
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "GET",
+        "path": "/books/translate/v2/companyinstance/.*/OS"
+      },
+      "httpResponse": {
+        "body": "{\"data\": {\"type\": \"companyinstanceids\", \"attributes\": {\"companyInstanceSourceId\": \"6061de1c-e077-4ff7-99bd-bfd50d7fb134\", \"source\": \"OS\", \"translatedCompanyInstances\": [{\"source\": \"SET\", \"companyInstanceSourceId\": \"4341841\"}]}}}",
+        "headers": [
+           {
+            "name": "Content-Type",
+            "values": ["application/json"]
+            }
+        ]
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "GET",
+        "path": "/books/translate/v2/propertyinstance/.*/OS"
+      },
+      "httpResponse": {
+        "body": "{\"data\": {\"type\": \"propertyinstanceids\", \"attributes\": {\"propertyInstanceSourceId\": \"91d754cb-549e-473a-a420-6804f870c54a\", \"source\": \"OS\", \"translatedPropertyInstances\": [{\"source\": \"SET\", \"propertyInstanceSourceId\": \"4341849\"}]}}}",
+        "headers": [
+           {
+            "name": "Content-Type",
+            "values": ["application/json"]
+            }
+        ]
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "POST",
+        "path": "/settings/v1/SET/companies/.*/properties/.*"
+      },
+      "httpResponse": {
+        "body": "{\"keys\": [{\"category\": null, \"name\": \"emergphone\", \"value\": \"+14692120000\"}, {\"category\": null, \"name\": \"aipropertypronunciation\", \"value\": \"kasidi saauthth\"}, {\"category\": null, \"name\": \"airesidentsreferredto\", \"value\": \"Member\"}, {\"category\": null, \"name\": \"aienablepricingandavailability\", \"value\": \"1\"}, {\"category\": null, \"name\": \"aisendlinkforpricing\", \"value\": \"Total Monthly Leasing Price + Link\"}], \"tables\": [{\"category\": null, \"name\": \"aifaqlist\", \"value\": [{\"columns\": [{\"category\": null, \"name\": \"aiquestion\", \"value\": \"Do you accept dogs?\"}, {\"category\": null, \"name\": \"airesponse\", \"value\": \"Yes\"}, {\"category\": null, \"name\": \"aicategory\", \"value\": \"Pets\"}, {\"category\": null, \"name\": \"aiappliesto\", \"value\": \"Applicant|Prospect|Resident\"}, {\"category\": null, \"name\": \"aiexpirationdate\", \"value\": \"\"}, {\"category\": null, \"name\": \"Sequence\", \"value\": \"1\"}]}]}], \"pickLists\": []}",
+        "headers": [
+           {
+            "name": "Content-Type",
+            "values": ["application/json"]
+            }
+        ]
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "POST",
+        "path": "/inboundIVR/api/voice/ResAICreateEngineDispatch/PropertyID"
+      },
+      "httpResponse": {
+        "statusCode": 200,
+        "body": "{\"success\": true}",
+        "headers": [
+           {
+            "name": "Content-Type",
+            "values": ["application/json"]
+            }
+        ]
+      }
+    }
+]

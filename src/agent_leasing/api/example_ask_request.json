@@ -1,0 +1,128 @@
+{
+  "product": "resident_one_chat",
+  "prompt": "",
+  "confirmation": "",
+  "chat_session_id": "7d11005a-34ab-4c3a-b45d-67ac443d93cb",
+  "flow_id": "a20bc2ee-056a-43db-941e-d8dc88646e4c",
+  "state": "",
+  "request_type": "standard",
+  "property_name": "Cassidy South",
+  "product_info": {
+    "source": "OLL",
+    "knock_property_id": "21521",
+    "knock_applicant_id": "1234",
+    "knock_application_id": "123456",
+    "ai_config": {
+      "is_chat_enabled": true,
+      "is_gen_ai_chat_enabled": true,
+      "resident_virtual_agent_chat": true,
+      "resident_virtual_agent_chat_gen_ai": true,
+      "chat_rollover": "RPCC",
+      "schedule_tour_va_enabled": true,
+      "pna_va_enabled": true,
+      "rpcc_agent_rollover": true
+    },
+    "property_name": "Cassidy South",
+    "property_address": {
+      "city": "McKinney",
+      "house": "",
+      "neighborhood": "Canyon Creek",
+      "raw": "1401 n custer rd McKinney TX 75072",
+      "state": "TX",
+      "street": "1401 n custer rd",
+      "zip": "75072"
+    },
+    "office_hours": {
+      "1": {
+        "open": "9:00",
+        "close": "17:00"
+      },
+      "2": {
+        "open": "9:00",
+        "close": "17:00"
+      },
+      "3": {
+        "open": "9:00",
+        "close": "17:00"
+      },
+      "4": {
+        "open": "9:00",
+        "close": "17:00"
+      },
+      "5": {
+        "open": "9:00",
+        "close": "17:00"
+      },
+      "6": {
+        "open": "10:00",
+        "close": "16:00"
+      },
+      "7": {
+        "open": null,
+        "close": null
+      }
+    },
+    "property_preferences": {
+      "ai_cross_sell_availability_url": "https://www.google.com",
+      "in_person_tours": true,
+      "live_video_tour_type": true,
+      "self_guided_tour_button_label": "self",
+      "self_guided_tour_url": "https://example.com",
+      "self_guided_tours_enabled": true,
+      "tours_export_only_favorite_unit": false,
+      "virtual_tour_links": false,
+      "virtual_tour_links_mapping": []
+    },
+    "property_timezone": "America/Chicago",
+    "uc_first_name": "Bee",
+    "uc_last_name": "Rosemary",
+    "uc_company_id": {
+      "id": 7618558,
+      "source": "OS"
+    },
+    "uc_property_id": {
+      "id": 7618559,
+      "source": "OS"
+    },
+    "uc_guestcard_id": {
+      "id": 66,
+      "source": "OS"
+    },
+    "uc_customer_id": {
+      "id": 60,
+      "source": "OS"
+    },
+    "uc_lease_id": {
+      "id": 1101,
+      "source": "OS"
+    },
+    "uc_resident_member_id": {
+      "id": 1003,
+      "source": "OS"
+    },
+    "uc_resident_household_id": {
+      "id": 927,
+      "source": "OS"
+    },
+    "uc_community_id": {
+      "id": 6838,
+      "source": "AB"
+    },
+    "uc_community_uuid": {
+      "id": "7497a6d9-927b-4364-8d5b-eb2924d611f6",
+      "source": "AB"
+    },
+    "uc_consumer_identity_token": {
+        "id": "eyJhbGciOiJSUzI1NiIsImtzpZCI6Ij1UzNEUzMTU5MjM4QkQ5NjU2ODVGM0U0MkU0NzJGREVGIiwieDV0I",
+        "source": "CIDP"
+    },
+    "ab_resident_id": {
+      "id": "12361992",
+      "source": "AB"
+    },
+    "ab_resident_uuid": {
+      "id": "6a5795b7-0764-4b42-b4aa-982f747eafc9",
+      "source": "AB"
+    }
+  }
+}

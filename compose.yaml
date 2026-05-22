@@ -1,0 +1,70 @@
+# This must be run from the project root. See the README there for instructions.
+name: agent-leasing
+services:
+  agent-server:
+    build: .
+    env_file:
+      - .env
+    environment:
+      KNOCK_MCP_SERVER: http://mcp:8042/
+      LOFT_MCP_SERVER: http://mcp:8042/
+      ONESITE_MCP_SERVER: http://mcp:8042/
+      FACILITIES_MCP_SERVER: http://mcp:8042/
+      FACILITIES_MCP_AUTH_TOKEN_ENDPOINT: http://mock-server:1080/login/identity/connect/token
+      KNOCK_MCP_AUTH_TOKEN_ENDPOINT: http://mock-server:1080/login/identity/connect/token
+      LOFT_MCP_AUTH_TOKEN_ENDPOINT: http://mock-server:1080/login/identity/connect/token
+      ONESITE_MCP_AUTH_TOKEN_ENDPOINT: http://mock-server:1080/login/identity/connect/token
+      LDP_LOGIN_TOKEN_ENDPOINT: http://mock-server:1080/login/identity/connect/token
+      LDP_RP_API_URL: http://mock-server:1080
+      BOOKS_HOST: http://mock-server:1080/
+      BOOKS_AUTH_ENDPOINT: http://mock-server:1080/login/identity/connect/token
+      OTEL_ENABLED: True
+      OTEL_SERVICE_NAME: agent-leasing
+      OTEL_BSP_MAX_EXPORT_BATCH_SIZE: 128
+      OTEL_TRACES_SAMPLER: always_on
+      AGENTIC_EVALS_ENDPOINT: ${AGENTIC_EVALS_ENDPOINT:-http://host.docker.internal:8080/ingest/otel}
+      AGENTIC_EVALS_TOKEN: ${AGENTIC_EVALS_TOKEN:-local-dev-token}
+      LANGSMITH_OTEL_ENABLED: "true"
+      LANGSMITH_TRACING: "true"
+      LANGSMITH_ENDPOINT: "https://api.smith.langchain.com"
+    profiles: ["server"]
+    develop:
+      watch:
+        - action: rebuild
+          path: ./src
+        - action: rebuild
+          path: ./pyproject.toml
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+  mcp:
+    build:
+      context: .
+      dockerfile: MCP.dockerfile
+    develop:
+      watch:
+        - action: rebuild
+          path: ./src
+        - action: rebuild
+          path: ./pyproject.toml
+    ports:
+      - "8042:8042"
+  redis:
+    image: redis:latest # Or a specific version like redis:7.4-alpine
+    container_name: redis
+    ports:
+      - "6379:6379" # Map host port 6379 to container port 6379
+    volumes:
+      - redis_data:/data # Persist Redis data
+    restart: always # Ensure Redis restarts if it crashes
+    command: redis-server --appendonly yes # Optional: Enable AOF persistence
+  mock-server:
+    build:
+      context: ./tests
+      dockerfile: mockserver/Dockerfile
+    command: -logLevel INFO -serverPort 1080
+    ports:
+      - "1080:1080"
+volumes:
+  redis_data:

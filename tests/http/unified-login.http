@@ -1,0 +1,19 @@
+############################################################
+# Acquire the access token
+############################################################
+# @name accessTokenRequest
+POST {{tokenEndpoint}}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type = client_credentials
+    &
+client_id = {{clientId}}
+    &
+client_secret = {{clientSecret}}
+    &
+scope = {{scopes}}
+
+############################################################
+# Set the access token from the preceding request.
+############################################################
+@accessToken = {{accessTokenRequest.response.body.access_token}}

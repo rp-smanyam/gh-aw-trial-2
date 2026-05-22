@@ -1,0 +1,158 @@
+{
+  "product": "resident_one_chat",
+  "request_type": "standard",
+  "prompt": "",
+  "prompt_version": 0,
+  "confirmation": "",
+  "chat_session_id": "cead69bd-e9a7-4453-80f2-64383a92b52d",
+  "flow_id": "153b18b5-d3ce-42c2-a327-877591d8488e",
+  "state": "",
+  "product_info": {
+    "source": "LL",
+    "knock_property_id": "21521",
+    "knock_resident_id": "137",
+    "ai_config": {
+      "is_chat_enabled": true,
+      "is_gen_ai_chat_enabled": true,
+      "resident_virtual_agent_chat": true,
+      "resident_virtual_agent_chat_gen_ai": true,
+      "chat_rollover": "NONE",
+      "schedule_tour_va_enabled": true,
+      "pna_va_enabled": true,
+      "rpcc_agent_rollover": false
+    },
+    "lo_property_id": "27504",
+    "dispatch_schedule_active": true,
+    "emerg_phone": "(202) 381-0111",
+    "resident_phone": "(202) 555-1234",
+    "property_name": "Reilly Summit",
+    "date_of_birth": "09/09/1960",
+    "ab_building_number": "3",
+    "ab_unit_number": "64",
+    "property_address": {
+      "city": "McKinney",
+      "house": "",
+      "neighborhood": "Canyon Creek",
+      "raw": " 1401 n custer rd McKinney TX 75072",
+      "state": "TX",
+      "street": "1401 n custer rd",
+      "zip": "75072"
+    },
+    "office_hours": {
+      "1": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      },
+      "2": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "08:00:00"
+      },
+      "3": {
+        "end_time": "18:00:00",
+        "is_active": false,
+        "start_time": "09:00:00"
+      },
+      "4": {
+        "end_time": "17:00:00",
+        "is_active": false,
+        "start_time": "08:00:00"
+      },
+      "5": {
+        "end_time": "18:45:00",
+        "is_active": false,
+        "start_time": "08:00:00"
+      },
+      "6": {
+        "end_time": "16:00:00",
+        "is_active": false,
+        "start_time": "09:00:00"
+      },
+      "7": {
+        "end_time": "17:00:00",
+        "is_active": false,
+        "start_time": "09:00:00"
+      }
+    },
+    "property_preferences": {
+      "ai_cross_sell_availability_url": "https://www.google.com",
+      "in_person_tours": true,
+      "live_video_tour_type": true,
+      "self_guided_tour_button_label": "self",
+      "self_guided_tour_url": "https://example.com",
+      "self_guided_tours_enabled": true,
+      "tours_export_only_favorite_unit": false,
+      "virtual_tour_links": false,
+      "virtual_tour_links_mapping": []
+    },
+    "property_timezone": "America/Chicago",
+    "uc_portal_base_url": "https://reillysummitai.qa2.loftliving.com",
+    "uc_first_name": "Bee",
+    "uc_last_name": "Rosemary",
+    "uc_company_id": {
+      "id": "7641926",
+      "source": "OS"
+    },
+    "uc_property_id": {
+      "id": "7641954",
+      "source": "OS"
+    },
+    "uc_lease_id": {
+      "id": "250",
+      "source": "OS"
+    },
+    "uc_resident_member_id": {
+      "id": "137",
+      "source": "OS"
+    },
+    "uc_resident_household_id": {
+      "id": "170",
+      "source": "OS"
+    },
+    "ab_resident_id": {
+      "id": "4860883",
+      "source": "AB"
+    },
+    "ab_resident_uuid": {
+      "id": "1c8787ad-b50c-45fa-87eb-67a201335fef",
+      "source": "AB"
+    },
+    "uc_community_id": {
+      "id": "13319",
+      "source": "AB"
+    },
+    "uc_community_uuid": {
+      "id": "8046247c-7465-45e2-9a4e-7cf50ff8aa46",
+      "source": "AB"
+    },
+    "uc_consumer_identity_token": {
+      "id": "[REDACTED]",
+      "source": "CIDP"
+    },
+    "os_unit_id": {
+      "id": "3",
+      "source": "OS"
+    },
+    "ab_unit_id": {
+      "id": "2056338",
+      "source": "AB"
+    },
+    "static_paths": {
+      "payment_and_ledger": "/portal/payments",
+      "amenities": "/portal/amenities",
+      "reservations": "/portal/reservations",
+      "parking": "/portal/parking-passes",
+      "package": "/portal/packages",
+      "community_events": "/portal/events",
+      "human_hand_off": "/portal/messenger",
+      "service_request": "/portal/mr",
+      "front_desk_instructions": "/portal/fdi",
+      "resident_checklist": "/portal/resident-checklist",
+      "parking_passes": "/portal/parking-passes",
+      "community_wall": "/portal/wall",
+      "single_service_request": "/portal/mr/detail/mrId",
+      "all_open_service_request": "/portal/mr/index/status/open"
+    }
+  }
+}

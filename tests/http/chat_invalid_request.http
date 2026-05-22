@@ -1,0 +1,14 @@
+POST http://127.0.0.1:8000/v1/agent/ask
+Content-Type: application/json
+
+{
+  "product": "resident_one_chat",
+  "prompt": "hello",
+  "chat_session_id": "1",
+  "product_info": {
+    "knock_prospect_id": "95946",
+    "knock_property_id": "21521"
+  }
+}
+
+###

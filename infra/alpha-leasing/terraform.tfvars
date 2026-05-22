@@ -1,0 +1,20 @@
+environment = "alpha"
+application = "agent-leasing"
+cluster     = "knock_alpha_rp_ai"
+tags = {
+  "knock:service"           = "agent-leasing"
+  "knock:application"       = "agent-leasing"
+  "knock:allocation"        = "development"
+  "knock:owning-team-email" = "devops@knockcrm.com"
+  "knock:managed-via"       = "terraform"
+  "knock:repository-link"   = "https://github.com/RealPage/agent-leasing"
+  "knock:critical-infra"    = "no"
+}
+image_repo_names           = ["agent-leasing","otel-collector"]
+github_repo_name           = "agent-leasing"
+vpc_name                   = "cc-alpha-vpc"
+container_port             = "8000"
+container_healthcheck_path = "/v1/healthcheck"
+aws_account                = 969504524223
+app_image_tag              = "placeholder"
+secrets_hash               = "BHY04F"

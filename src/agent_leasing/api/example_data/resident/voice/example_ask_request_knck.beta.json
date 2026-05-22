@@ -1,0 +1,138 @@
+{
+  "product": "resident_one_voice",
+  "request_type": "voice",
+  "prompt": "",
+  "confirmation": "",
+  "chat_session_id": "45384a4d-585e-49b1-af81-2cd7dc85226c",
+  "flow_id": "dcfb1e13-f921-4517-89ac-4e7e71593852",
+  "product_info": {
+    "source": "LL",
+    "knock_property_id": "21759",
+    "knock_resident_id": "12338",
+    "ab_unit_number": "03",
+    "date_of_birth": "09/09/1960",
+    "property_name": "Cooper Station",
+    "property_address": {
+      "city": "ewqe",
+      "house": "",
+      "neighborhood": "",
+      "raw": " eqeqw ewqe CA 94597",
+      "state": "CA",
+      "street": "eqeqw",
+      "zip": "94597"
+    },
+    "office_hours": {
+      "1": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      },
+      "2": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      },
+      "3": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      },
+      "4": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      },
+      "5": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      },
+      "6": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      },
+      "7": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      }
+    },
+    "property_preferences": {
+      "in_person_tours": true
+    },
+    "property_timezone": "America/Los_Angeles",
+    "lo_property_id": "27504",
+    "caller": "+15103810111",
+    "callee": "+14066307809",
+    "resident_phone": "",
+    "dispatch_schedule_active": "RPCC",
+    "emerg_phone": "(800) 704-0154",
+    "uc_portal_base_url": "https://cooperstation1.sat.loftliving.com",
+    "uc_company_id": {
+      "id": "7643280",
+      "source": "OS"
+    },
+    "uc_property_id": {
+      "id": "7643325",
+      "source": "OS"
+    },
+    "uc_lease_id": {
+      "id": "12643",
+      "source": "OS"
+    },
+    "uc_resident_member_id": {
+      "id": "12338",
+      "source": "OS"
+    },
+    "uc_resident_household_id": {
+      "id": "12291",
+      "source": "OS"
+    },
+    "ab_resident_id": {
+      "id": "5376834",
+      "source": "AB"
+    },
+    "ab_resident_uuid": {
+      "id": "c999c441-e490-4d44-beca-e1fb7f1cf6ad",
+      "source": "AB"
+    },
+    "uc_community_id": {
+      "id": "15220",
+      "source": "AB"
+    },
+    "uc_community_uuid": {
+      "id": "a2909a36-cecc-4ce4-bc74-2cab32573110",
+      "source": "AB"
+    },
+    "uc_consumer_identity_token": {
+      "id": "[REDACTED]",
+      "source": "CIDP"
+    },
+    "os_unit_id": {
+      "id": "13",
+      "source": "OS"
+    },
+    "ab_unit_id": {
+      "id": "2677296",
+      "source": "AB"
+    },
+    "static_paths": {
+      "payment_and_ledger": "/portal/payments",
+      "amenities": "/portal/amenities",
+      "reservations": "/portal/reservations",
+      "parking": "/portal/parking-passes",
+      "package": "/portal/packages",
+      "community_events": "/portal/events",
+      "human_hand_off": "/portal/messenger",
+      "service_request": "/portal/mr",
+      "front_desk_instructions": "/portal/fdi",
+      "resident_checklist": "/portal/resident-checklist",
+      "parking_passes": "/portal/parking-passes",
+      "community_wall": "/portal/wall",
+      "single_service_request": "/portal/mr/detail/mrId",
+      "all_open_service_request": "/portal/mr/index/status/open"
+    }
+  },
+  "call_sid": "CAa0eff0a0df88a27ea714e594a6bf94b7"
+}

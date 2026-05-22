@@ -1,0 +1,63 @@
+graph TD
+
+subgraph Centered channels["Channels"]
+direction TB
+SMS
+Email
+Chat
+Voice
+end
+
+subgraph responders["Resident Responders"]
+direction TB
+R(Responder Agent - SMS/chat/e-mail)
+RR(Realtime Responder - Voice)
+end
+
+subgraph thinkers["Resident Thinkers"]
+direction TB
+
+CA(Community Agent - As Tool)
+HO(Handoff Agent - As Tool)
+PL(Policy & Ledger - As Tool)
+QNA(QNA - As Tool)
+
+end
+
+ASK(REST API - /v1/agent/ask)
+INC(REST API - /realtime-incoming-call)
+WS(websockets)
+
+CAT1(Tool1)
+CAT2(Tool2)
+HO1(Tool1)
+PL1(Tool1)
+PL2(Tool2)
+QNA1(Tool1)
+
+M1(Facilities MCP - Tool)
+
+SMS --> ASK
+Email --> ASK
+Chat --> ASK
+Voice --> INC
+
+ASK --> R
+INC --> RR
+
+WS <--> RR
+Voice <--> WS
+
+
+R ---|tool| thinkers
+RR ---|tool| thinkers
+
+R -.-|mcp tool| M1
+RR -.- |mcp tool| M1
+
+CA -.-|mcp tool| CAT1
+CA -.-|mcp tool| CAT2
+HO -.-|mcp tool| HO1
+PL -.-|mcp tool| PL1
+PL -.-|mcp tool| PL2
+QNA -.-|mcp tool| QNA1

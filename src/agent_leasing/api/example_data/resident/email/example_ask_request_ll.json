@@ -1,0 +1,164 @@
+{
+  "product": "resident_one_email",
+  "prompt": "",
+  "confirmation": "",
+  "chat_session_id": "01bccc96-cc12-459a-8aa5-e4e295228cfc",
+  "flow_id": "3eb332f1-b8ce-461b-bd45-272092d7cefc",
+  "state": "",
+  "request_type": "standard",
+  "product_info": {
+    "source": "KNCK",
+    "knock_property_id": "21521",
+    "knock_resident_id": "1293997",
+    "resident_assigned_manager_id": 240712,
+    "resident_renter_id": null,
+    "property_name": "Cassidy South",
+    "property_address": {
+      "street": "1401 n custer rd",
+      "city": "McKinney",
+      "state": "TX",
+      "zip": "75072",
+      "neighborhood": "Canyon Creek",
+      "raw": "1401 n custer rd McKinney TX 75072",
+      "house": ""
+    },
+    "property_timezone": "America/Chicago",
+    "ai_config": {
+      "is_email_enabled": true,
+      "is_gen_ai_email_enabled": null,
+      "resident_virtual_agent_email": true,
+      "resident_virtual_agent_email_gen_ai": null,
+      "chat_rollover": "RPCC",
+      "schedule_tour_va_enabled": true,
+      "pna_va_enabled": true,
+      "rpcc_agent_rollover": true
+    },
+    "lo_property_id": "27504",
+    "dispatch_schedule_active": true,
+    "emerg_phone": "(202) 381-0111",
+    "resident_phone": "(202) 555-1234",
+    "office_hours": {
+      "1": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "09:00:00"
+      },
+      "2": {
+        "end_time": "17:00:00",
+        "is_active": true,
+        "start_time": "08:00:00"
+      },
+      "3": {
+        "end_time": "18:00:00",
+        "is_active": false,
+        "start_time": "09:00:00"
+      },
+      "4": {
+        "end_time": "17:00:00",
+        "is_active": false,
+        "start_time": "08:00:00"
+      },
+      "5": {
+        "end_time": "18:45:00",
+        "is_active": false,
+        "start_time": "08:00:00"
+      },
+      "6": {
+        "end_time": "16:00:00",
+        "is_active": false,
+        "start_time": "09:00:00"
+      },
+      "7": {
+        "end_time": "17:00:00",
+        "is_active": false,
+        "start_time": "09:00:00"
+      }
+    },
+    "property_preferences": {
+      "ai_cross_sell_availability_url": "https://www.google.com",
+      "in_person_tours": true,
+      "live_video_tour_type": true,
+      "self_guided_tour_button_label": "self",
+      "self_guided_tour_url": "https://example.com",
+      "self_guided_tours_enabled": true,
+      "tours_export_only_favorite_unit": false,
+      "virtual_tour_links": false,
+      "virtual_tour_links_mapping": []
+    },
+    "uc_company_id": {
+      "id": "7618558",
+      "source": "OS"
+    },
+    "uc_property_id": {
+      "id": "7618559",
+      "source": "OS"
+    },
+    "uc_lease_id": {
+      "id": "1101",
+      "source": "OS"
+    },
+    "uc_resident_member_id": {
+      "id": "1003",
+      "source": "OS"
+    },
+    "uc_resident_household_id": {
+      "id": "927",
+      "source": "OS"
+    },
+    "uc_community_id": {
+      "id": "6838",
+      "source": "AB"
+    },
+    "uc_community_uuid": {
+      "id": "7497a6d9-927b-4364-8d5b-eb2924d611f6",
+      "source": "AB"
+    },
+    "ab_resident_id": {
+      "id": "12361992",
+      "source": "AB"
+    },
+    "ab_resident_uuid": {
+      "id": "6a5795b7-0764-4b42-b4aa-982f747eafc9",
+      "source": "AB"
+    },
+    "ab_unit_id": {
+      "id": "Apt 1203",
+      "source": "AB"
+    },
+    "uc_first_name": "Bee",
+    "uc_last_name": "Rosemary",
+    "email_chat": {
+      "email_subject": "Greetings",
+      "knock_property_id": "21521",
+      "knock_resident_id": "1293997",
+      "knock_resident_email": "none@nowhere.com",
+      "knock_resident_source": null,
+      "resident_assigned_manager_id": "240712",
+      "original_text": "Are pets allowed?",
+      "html": "<p>Are pets allowed?</p>",
+      "email_source": "web",
+      "thread_id": "{{THREAD_ID_INT}}",
+      "thread_message_chat_id": "787"
+    },
+    "uc_portal_base_url": "https://cassidysouth.qa1.loftliving.com",
+    "static_paths": {
+      "payment_and_ledger": "/portal/payments",
+      "amenities": "/portal/reservations",
+      "parking": "/portal/parking-passes",
+      "package": "/portal/packages",
+      "community_events": "/portal/events",
+      "human_hand_off": "/portal/messenger",
+      "service_request": "/portal/mr",
+      "front_desk_instructions": "/portal/fdi",
+      "resident_checklist": "/portal/resident-checklist",
+      "parking_passes": "/portal/parking-passes",
+      "community_wall": "/portal/wall",
+      "single_service_request": "/portal/mr/detail/mrId",
+      "all_open_service_request": "/portal/mr/index/status/open"
+    },
+    "date_of_birth": "09/09/1960",
+    "ab_building_number": "3",
+    "ab_unit_number": "64",
+    "_comment": "Added sat value as alpha value TBD for date_of_birth, ab_building_number, ab_unit_number"
+  }
+}

@@ -1,0 +1,168 @@
+{
+    "type": "record",
+    "name": "DataCuration",
+    "namespace": "com.realpage.knock.cai",
+    "doc": "Conversational AI record for the Reporting Data Pipeline.",
+    "fields": [
+        {
+            "name": "conversation_id",
+            "type": "string",
+            "doc": "Identifies a conversation, typically but not necessarily a UUID"
+        },
+        {
+            "name": "call_sid",
+            "type": [
+                "null",
+                "string"
+            ],
+            "doc": "Identifier for incoming calls",
+            "default": null
+        },
+        {
+            "name": "property_id",
+            "type": "string",
+            "doc": "Knock Property ID"
+        },
+        {
+            "name": "prospect_id",
+            "type": "string",
+            "doc": "Knock Prospect ID"
+        },
+        {
+            "name": "conversation_type",
+            "type": {
+                "type": "enum",
+                "name": "ConversationType",
+                "doc": "* `EMAIL` \n* `SMS` \n* `CHAT` \n* `VOICE` \n* `UNKNOWN`: Default value, used by a consumer with a stale version of this enum relative to the producer.",
+                "symbols": [
+                    "EMAIL",
+                    "SMS",
+                    "CHAT",
+                    "VOICE",
+                    "UNKNOWN"
+                ],
+                "default": "UNKNOWN"
+            },
+            "doc": "Email, SMS, Chat, Voice."
+        },
+        {
+            "name": "bot_type",
+            "type": {
+                "type": "enum",
+                "name": "BotType",
+                "doc": "* `RESIDENT`: resident bot. \n* `APPLICANT`: applicant bot. \n* `PROSPECT`: prospect bot. \n* `UNKNOWN`: Default value, used by a consumer with a stale version of this enum relative to the producer.",
+                "symbols": [
+                    "RESIDENT",
+                    "APPLICANT",
+                    "PROSPECT",
+                    "UNKNOWN"
+                ],
+                "default": "UNKNOWN"
+            },
+            "doc": "Resident, Applicant, Prospect.",
+            "default": "UNKNOWN"
+        },
+        {
+            "name": "language",
+            "type": [
+                "null",
+                "string"
+            ],
+            "doc": "Language code for the entire conversation: en, es, etc.",
+            "default": null
+        },
+        {
+            "name": "transcript",
+            "type": {
+                "type": "record",
+                "name": "Transcript",
+                "doc": "Transcript of a conversation",
+                "fields": [
+                    {
+                        "name": "author",
+                        "type": {
+                            "type": "enum",
+                            "name": "Author",
+                            "doc": "* `CONTACT`: author was a human. \n* `BOT`: author is a RealPage bot. \n* `UNKNOWN`: Default value, used by a consumer with a stale version of this enum relative to the producer.",
+                            "symbols": [
+                                "CONTACT",
+                                "BOT",
+                                "UNKNOWN"
+                            ],
+                            "default": "UNKNOWN"
+                        },
+                        "doc": "Source of the message",
+                        "default": "UNKNOWN"
+                    },
+                    {
+                        "name": "body",
+                        "type": "string",
+                        "doc": "Transcript contents"
+                    },
+                    {
+                        "name": "timestamp",
+                        "type": {
+                            "type": "long",
+                            "logicalType": "timestamp-millis"
+                        },
+                        "doc": "Timestamp of when the transcript was generated. Depending on author this is either the time that a request was received (CONTACT) or the response was sent out (BOT)."
+                    },
+                    {
+                        "default": null,
+                        "doc": "metadata",
+                        "name": "metadata",
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                    },
+                    {
+                        "default": null,
+                        "doc": "openai_trace_url",
+                        "name": "openai_trace_url",
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                    },
+                    {
+                        "default": null,
+                        "doc": "langsmith_trace_url",
+                        "name": "langsmith_trace_url",
+                        "type": [
+                          "null",
+                          "string"
+                        ]
+                    }
+                ]
+            },
+            "doc": "Conversation transcript"
+        },
+        {
+            "name": "intent",
+            "type": {
+                "type": "record",
+                "name": "Intent",
+                "doc": "Information relevant to intent detection",
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "flow_name from Agent API"
+                    },
+                    {
+                        "name": "display_name",
+                        "type": "string",
+                        "doc": "display version of flow_name from Agent API"
+                    },
+                    {
+                        "name": "language",
+                        "type": "string",
+                        "doc": "Language code for the particular intent"
+                    }
+                ]
+            },
+            "doc": "Conversation intent"
+        }
+    ]
+}

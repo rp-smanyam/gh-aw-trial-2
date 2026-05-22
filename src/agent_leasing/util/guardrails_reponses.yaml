@@ -1,0 +1,93 @@
+competitor_blocking_guardrail:
+  en: "I'm sorry, I couldn't complete the previous request. I'm here to help you with your property-related needs. How else can I assist you today?"
+  es: "Lo siento, no pude completar la solicitud anterior. Estoy aquí para ayudarle con sus necesidades relacionadas con la propiedad. ¿En qué más puedo ayudarle hoy?"
+  fr: "Je suis désolé, je n'ai pas pu compléter la demande précédente. Je suis ici pour vous aider avec vos besoins liés à la propriété. Comment puis-je vous aider aujourd'hui?"
+  de: "Es tut mir leid, ich konnte die vorherige Anfrage nicht abschließen. Ich bin hier, um Ihnen bei Ihren immobilienbezogenen Anliegen zu helfen. Wie kann ich Ihnen sonst helfen?"
+  pt: "Sinto muito, não consegui concluir a solicitação anterior. Estou aqui para ajudar com suas necessidades relacionadas à propriedade. Como mais posso ajudá-lo hoje?"
+  it: "Mi dispiace, non sono riuscito a completare la richiesta precedente. Sono qui per aiutarti con le tue esigenze relative alla proprietà. Come posso aiutarti oggi?"
+  ar: "عذرًا، لم أتمكن من إكمال الطلب السابق. أنا هنا لمساعدتك في احتياجاتك المتعلقة بالعقار. كيف يمكنني مساعدتك اليوم؟"
+  zh: "很抱歉，我未能完成之前的请求。我在这里帮助您处理与物业相关的需求。今天我还能如何协助您？"
+  ja: "申し訳ありませんが、前回のリクエストを完了できませんでした。不動産に関するご要望をお手伝いします。ほかにどのようなご用件でしょうか？"
+
+fair_housing_guardrail:
+  en: "I cannot make judgments about groups of people."
+  es: "No puedo hacer juicios sobre grupos de personas."
+  fr: "Je ne peux pas porter de jugements sur des groupes de personnes."
+  de: "Ich kann keine Urteile über Gruppen von Menschen fällen."
+  pt: "Não posso fazer julgamentos sobre grupos de pessoas."
+  it: "Non posso esprimere giudizi su gruppi di persone."
+  ar: "لا يمكنني إصدار أحكام على مجموعات من الأشخاص."
+  zh: "我不能对群体作出判断。"
+  ja: "人々の集団について判断することはできません。"
+
+# Non-English translations below are machine-translated drafts pending
+# native-speaker review. Static drafts are still preferable to a live
+# translate_text() LLM call on every guardrail trip. See issue #1640.
+legal_advice_guardrail:
+  en: "I'm not able to provide legal advice or interpret legal matters. Please consult a qualified attorney for guidance. I can help with general property information or point you to your lease terms."
+  es: "No puedo brindar asesoramiento legal ni interpretar asuntos jurídicos. Por favor, consulte a un abogado calificado para obtener orientación. Puedo ayudarle con información general sobre la propiedad o indicarle los términos de su contrato de arrendamiento."
+  fr: "Je ne peux pas fournir de conseils juridiques ni interpréter des questions juridiques. Veuillez consulter un avocat qualifié pour obtenir des conseils. Je peux vous aider avec des informations générales sur la propriété ou vous orienter vers les termes de votre bail."
+  de: "Ich kann keine Rechtsberatung anbieten oder rechtliche Angelegenheiten auslegen. Bitte wenden Sie sich an einen qualifizierten Anwalt. Ich kann Ihnen mit allgemeinen Informationen zur Immobilie helfen oder Sie auf Ihre Mietvertragsbedingungen verweisen."
+  pt: "Não posso fornecer aconselhamento jurídico ou interpretar questões legais. Por favor, consulte um advogado qualificado para obter orientação. Posso ajudar com informações gerais sobre o imóvel ou indicar os termos do seu contrato de locação."
+  it: "Non posso fornire consulenza legale né interpretare questioni giuridiche. La preghiamo di consultare un avvocato qualificato. Posso aiutarla con informazioni generali sulla proprietà o indicarle i termini del suo contratto di locazione."
+  ar: "لا يمكنني تقديم استشارات قانونية أو تفسير المسائل القانونية. يُرجى استشارة محامٍ مؤهل للحصول على التوجيه. يمكنني مساعدتك بمعلومات عامة عن العقار أو إرشادك إلى شروط عقد إيجارك."
+  zh: "我无法提供法律建议或解释法律问题。请咨询合格的律师以获取指导。我可以帮助您了解物业的一般信息或指引您查看租约条款。"
+  ja: "法的助言の提供や法的事項の解釈はできません。資格を持つ弁護士にご相談ください。物件の一般的な情報や賃貸契約の条件についてはお手伝いできます。"
+
+pii_guardrail:
+  en: "I'm sorry, but I cannot process requests containing personal information. How else can I assist you today?"
+  es: "Lo siento, pero no puedo procesar solicitudes que contengan información personal. ¿Cómo más puedo ayudarle hoy?"
+  fr: "Je suis désolé, mais je ne peux pas traiter les demandes contenant des informations personnelles. Comment puis-je vous aider autrement aujourd'hui ?"
+  de: "Es tut mir leid, aber ich kann keine Anfragen verarbeiten, die personenbezogene Informationen enthalten. Wie kann ich Ihnen sonst heute helfen?"
+  pt: "Sinto muito, mas não posso processar solicitações que contenham informações pessoais. Como mais posso ajudá-lo hoje?"
+  it: "Mi dispiace, ma non posso elaborare richieste che contengano informazioni personali. Come posso aiutarti oggi?"
+  ar: "عذرًا، لا يمكنني معالجة الطلبات التي تحتوي على معلومات شخصية. كيف يمكنني مساعدتك اليوم؟"
+  zh: "很抱歉，我无法处理包含个人信息的请求。今天我还能如何协助您？"
+  ja: "申し訳ありませんが、個人情報を含むリクエストは処理できません。本日は他にどのようなご用件でしょうか？"
+
+prisma_airs_guardrail:
+  en: "I'm sorry, but I cannot provide information or advice about offensive, illegal, or harmful activities. How else can I assist you today?"
+  es: "Lo siento, pero no puedo proporcionar información o asesoramiento sobre actividades ofensivas, ilegales o dañinas. ¿En qué más puedo ayudarte hoy?"
+  fr: "Je suis désolé, mais je ne peux pas fournir d'informations ni de conseils sur des activités offensantes, illégales ou nuisibles. Comment puis-je vous aider autrement aujourd'hui ?"
+  de: "Es tut mir leid, aber ich kann keine Informationen oder Ratschläge zu beleidigenden, illegalen oder schädlichen Aktivitäten geben. Wie kann ich Ihnen sonst heute helfen?"
+  pt: "Sinto muito, mas não posso fornecer informações ou aconselhamento sobre atividades ofensivas, ilegais ou prejudiciais. Como mais posso ajudá-lo hoje?"
+  it: "Mi dispiace, ma non posso fornire informazioni o consigli su attività offensive, illegali o dannose. Come posso aiutarti oggi?"
+  ar: "عذرًا، لا يمكنني تقديم معلومات أو نصائح حول أنشطة مسيئة أو غير قانونية أو ضارة. كيف يمكنني مساعدتك اليوم؟"
+  zh: "很抱歉，我无法提供有关冒犯性、非法或有害活动的信息或建议。今天我还能如何协助您？"
+  ja: "申し訳ありませんが、攻撃的、違法、または有害な活動に関する情報や助言は提供できません。本日は他にどのようなご用件でしょうか？"
+
+prompt_injection_guardrail:
+  en: "For safety reasons, I cannot help you with that request. How else can I assist you today?"
+  es: "Por razones de seguridad, no puedo ayudarle con esa solicitud. ¿Cómo más puedo ayudarle hoy?"
+  fr: "Pour des raisons de sécurité, je ne peux pas vous aider avec cette demande. Comment puis-je vous assister autrement aujourd'hui ?"
+  de: "Aus Sicherheitsgründen kann ich Ihnen bei dieser Anfrage nicht helfen. Wie kann ich Ihnen heute sonst noch behilflich sein?"
+  pt: "Por razões de segurança, não posso ajudá-lo com essa solicitação. Como mais posso ajudá-lo hoje?"
+  it: "Per motivi di sicurezza, non posso aiutarti con questa richiesta. Come posso aiutarti oggi?"
+  ar: "لأسباب تتعلق بالسلامة، لا يمكنني مساعدتك في هذا الطلب. كيف يمكنني مساعدتك اليوم؟"
+  zh: "出于安全原因，我无法帮助您处理该请求。今天我还能如何协助您？"
+  ja: "安全上の理由により、そのリクエストには対応できません。本日は他にどのようなご用件でしょうか？"
+
+security_guardrail:
+  en: "I'm sorry, but I cannot provide information or advice about offensive, illegal, or harmful activities. How else can I assist you today?"
+  es: "Lo siento, pero no puedo proporcionar información o asesoramiento sobre actividades ofensivas, ilegales o dañinas. ¿En qué más puedo ayudarte hoy?"
+  fr: "Je suis désolé, mais je ne peux pas fournir d'informations ni de conseils sur des activités offensantes, illégales ou nuisibles. Comment puis-je vous aider autrement aujourd'hui ?"
+  de: "Es tut mir leid, aber ich kann keine Informationen oder Ratschläge zu anstößigen, illegalen oder schädlichen Aktivitäten geben. Wie kann ich Ihnen heute sonst behilflich sein?"
+  pt: "Sinto muito, mas não posso fornecer informações ou aconselhamento sobre atividades ofensivas, ilegais ou prejudiciais. Como mais posso ajudá-lo hoje?"
+  it: "Mi dispiace, ma non posso fornire informazioni o consigli su attività offensive, illegali o dannose. Come posso aiutarti oggi?"
+  ar: "عذرًا، لا يمكنني تقديم معلومات أو نصائح حول أنشطة مسيئة أو غير قانونية أو ضارة. كيف يمكنني مساعدتك اليوم؟"
+  zh: "很抱歉，我无法提供有关冒犯性、非法或有害活动的信息或建议。今天我还能如何协助您？"
+  ja: "申し訳ありませんが、攻撃的、違法、または有害な活動に関する情報や助言は提供できません。本日は他にどのようなご用件でしょうか？"
+
+# Non-English translations below are machine-translated drafts pending
+# native-speaker review. Static drafts are still preferable to a live
+# translate_text() LLM call on every guardrail trip. See issue #1640.
+unauthorized_promises_guardrail:
+  en: "I'm not authorized to make that commitment. Let me connect you with someone who can help with that request."
+  es: "No estoy autorizado para hacer ese compromiso. Permítame conectarle con alguien que pueda ayudar con esa solicitud."
+  fr: "Je ne suis pas autorisé à prendre cet engagement. Permettez-moi de vous mettre en relation avec quelqu'un qui pourra vous aider avec cette demande."
+  de: "Ich bin nicht befugt, diese Zusage zu machen. Lassen Sie mich Sie mit jemandem verbinden, der Ihnen mit dieser Anfrage helfen kann."
+  pt: "Não estou autorizado a fazer esse compromisso. Permita-me conectá-lo com alguém que possa ajudar com essa solicitação."
+  it: "Non sono autorizzato a prendere questo impegno. Mi permetta di metterla in contatto con qualcuno che possa aiutarla con questa richiesta."
+  ar: "لست مخولاً بتقديم هذا الالتزام. اسمح لي بتوصيلك بشخص يمكنه المساعدة في هذا الطلب."
+  zh: "我无权做出该承诺。让我为您转接给可以处理该请求的同事。"
+  ja: "そのお約束をする権限がありません。そちらのご要望にお応えできる担当者におつなぎいたします。"

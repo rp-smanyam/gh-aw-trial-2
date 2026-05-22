@@ -1,0 +1,234 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/renter-read"
+    },
+    "httpResponse": {
+      "body": "{\"records\": [{\"resident_summary\": \"\\n    **Apartment Complex:** Cassidy South\\n\\n    **Address:** 1401 n custer rd, McKinney, TX 75072\\n\\n    **Neighborhood:** Canyon Creek\\n\\n    **Description:** Experience the exceptional lifestyle at Cassidy South Apartments in Richardson, Texas. Our modern, pet-friendly bedroom layouts offer elegant finishes and features that match your on-the-go lifestyle. Perfectly positioned, stylishly appointed, and upscale in experience, Cassidy South Apartments redefines refined urban living. Located in the heart of Richardson, Cassidy South Apartment homes feature Luxury Accents, Walk-In Closets, Modern Kitchen Appliances, Eco-Friendly Washer & Dryer, and Balconies in most units.\\n\\n    **Contact:** 253-802-8629, Email available\\n    \\n    **Towing Service:** Katie's Towing at 972-820-8000\\n\\n    **Office Hours:**\\n    *   Monday: 9:00 AM - 5:00 PM\\n    *   Tuesday: 8:00 AM - 5:00 PM\\n    *   Wednesday: 9:00 AM - 6:00 PM\\n    *   Thursday: 8:00 AM - 5:00 PM\\n    *   Friday: Closed\\n    *   Saturday: Closed\\n    *   Sunday: Closed\\n\\n    **Year Built:** 2023\\n\\n    **Number of Units:** 250\\n\\n    **Apartment Features:**\\n    *   Dishwasher\\n    *   Refrigerator\\n    *   Garbage disposal\\n    *   Microwave\\n    *   Range/Oven\\n    *   Hardwood floor\\n    *   Non-Smoking Property\\n    *   Quartz countertops\\n    *   Eco-Friendly Washer & Dryer\\n    *   Original Brick Accents\\n    *   Walk-In Closets\\n    *   Modern Kitchen Appliances\\n    *   Balconies in most units\\n    *   Unfurnished\\n    *   In Unit Laundry\\n\\n    **Community Amenities:**\\n    *   Private pool\\n    *   Balcony/patio\\n    *   Deck\\n    *   Heat: forced air\\n    *   Central AC\\n    *   Air conditioning\\n    *   Ceiling fans\\n    *   Fitness center\\n    *   Barbecue\\n    *   Golf course\\n    *   Controlled access\\n    *   Gated entry\\n    *   Doorman\\n    *   Cable-ready\\n    *   High-speed internet\\n    *   Onsite Dog Park\\n    *   Community Garden\\n    *   Community BBQ Patio\\n    *   Sparkling Swimming Pool\\n    *   Tennis & Pickleball Courts\\n    *   24-Hour Security\\n    *   Mail room and business center\\n    *   Green Appliances\\n    *   Community Room\\n\\n    **Parking:**\\n    *   Garage\\n    *   Covered\\n    *   Guests Parking Available\\n    *   Free Snow Removal\\n\\n    **Pet Policy:**\\n    *   Cats and small dogs allowed. Large dogs are not allowed. Snakes are allowed.\\n    *   Breed Restrictions: We cannot accept the following: Akita; American Staffordshire Terrier; Bull Terrier; Chow; Doberman; German Shepherd; Pitbull; Presa Canario; Rottweiler; Wolf Hybrids.\\n    *   Pet Deposit: $200\\n    *   Pet Fee: $100\\n    *   Pet Rent: $25/month\\n\\n    **Utilities:**\\n    *   Water: Included\\n    *   Sewage: Included\\n    *   Garbage: Resident responsible\\n    *   Gas: Resident responsible\\n    *   Electricity: Resident responsible\\n    *   Cable: Resident responsible\\n    *   Internet: Resident responsible\\n    *   Pest Control Fee of $2 per month: Included\\n\\n    **Leasing Information:**\\n    *   Application Fee: $30\\n    *   Application Instructions: Appy to the lease now link at the top of our property website.\\n    *   Lease Terms: 3, 6, 9, and 12 month lease terms available.\\n    *   Lease Break Penalty: Lease breaks require a 60 notice to vacate, plus a fee equivalent to 2 months of rent.\\n    *   Security Deposit: $200\\n    *   Leasing Special: Our current special is $500 off your first month's rent.\\n\\n    **Affordable Housing:**\\n    *   We do participate in a few affordable housing programs. Section 8 vouchers are accepted, we also allow a certain percentage of our apartments to be tax credit. There are maximum income limits and occupancy requirements that apply.\\n    *   Programs: Section 8 accepted\\n\\n    **Social:**\\n    *   Website: http://www.cooperstation.com.g5static.com/\\n\\n    **Videos:**\\n    *   https://www.youtube.com/cooperstation\\n\\n    **Key Selling Points:**\\n    *   Community: You will love our pet park and pet spa! We offer a state of the art fitness center open 24 hours a day to our residents. Relax and dive into our beautiful pool or grill up a feast poolside.\\n    *   Location: Our community is within walking distance to Prairie Creek Park. We are centrally located close to shops, restaurants, and parks. Cassidy South Apartments has easy access to I-75 and is located near a local bus route.\\n    *   Units: We offer expansive walk in closets in all of our homes. Beautiful modern kitchens with quartz countertops. Luxurious bathrooms with soaker tubs, and separate showers.\\n\\n    **Additional Notes:**\\n    *   We offer a 10% resident discount at Lonestar Coffee Co.\\n    *   Preferred employer discounts include: Lennox International, Amazon, CBRE Group, Honeywell, CVS Health, Capital One\\n\\n    \", \"extras\": {\"loftLiving\": {\"modules\": [\"PAYMENT_CENTER\", \"PARKING_PASS\", \"PACKAGES\", \"EVENTS\", \"MR\"]}}}]}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/login/identity/connect/token"
+    },
+    "httpResponse": {
+      "body": "{\"access_token\": \"token\",\"expires_in\": 3600,\"token_type\": \"Bearer\", \"scope\": \"scope\"}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/books/translate/v2/companyinstance/.*/OS"
+    },
+    "httpResponse": {
+      "body": "{\"data\": {\"type\": \"companyinstanceids\", \"attributes\": {\"companyInstanceSourceId\": \"6061de1c-e077-4ff7-99bd-bfd50d7fb134\", \"source\": \"OS\", \"translatedCompanyInstances\": [{\"source\": \"SET\", \"companyInstanceSourceId\": \"4341841\"}]}}}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/books/translate/v2/propertyinstance/.*/OS"
+    },
+    "httpResponse": {
+      "body": "{\"data\": {\"type\": \"propertyinstanceids\", \"attributes\": {\"propertyInstanceSourceId\": \"91d754cb-549e-473a-a420-6804f870c54a\", \"source\": \"OS\", \"translatedPropertyInstances\": [{\"source\": \"SET\", \"propertyInstanceSourceId\": \"4341849\"}]}}}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/settings/v1/SET/companies/.*/properties/.*"
+    },
+    "httpResponse": {
+      "body": "{\"keys\": [{\"category\": null, \"name\": \"emergphone\", \"value\": \"+14692120000\"}, {\"category\": null, \"name\": \"aipropertypronunciation\", \"value\": \"kasidi saauthth\"}, {\"category\": null, \"name\": \"airesidentsreferredto\", \"value\": \"Member\"}, {\"category\": null, \"name\": \"aienablepricingandavailability\", \"value\": \"1\"}, {\"category\": null, \"name\": \"aisendlinkforpricing\", \"value\": \"Total Monthly Leasing Price + Link\"}], \"tables\": [{\"category\": null, \"name\": \"aifaqlist\", \"value\": [{\"columns\": [{\"category\": null, \"name\": \"aiquestion\", \"value\": \"Do you accept dogs?\"}, {\"category\": null, \"name\": \"airesponse\", \"value\": \"Yes\"}, {\"category\": null, \"name\": \"aicategory\", \"value\": \"Pets\"}, {\"category\": null, \"name\": \"aiappliesto\", \"value\": \"Applicant|Prospect|Resident\"}, {\"category\": null, \"name\": \"aiexpirationdate\", \"value\": \"\"}, {\"category\": null, \"name\": \"Sequence\", \"value\": \"1\"}]}]}], \"pickLists\": []}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/inboundIVR/api/voice/ResAICreateEngineDispatch/.*"
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": "{\"success\": true}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/facilities-resident-thinker/v2/thinker",
+      "body": {
+        "type": "REGEX",
+        "regex": "(?is).*(collapse).*"
+      }
+    },
+    "httpResponse": {
+      "body": "{\"self_service_available\": false, \"service_request_numbers\": [], \"instructions\": \"Service request creation failed.\", \"action_taken\": null}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    },
+    "priority": 1
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/facilities-resident-thinker/v2/thinker",
+      "body": {
+        "type": "REGEX",
+        "regex": "(?is).*(gas).*"
+      }
+    },
+    "httpResponse": {
+      "body": "{\"self_service_available\": false, \"service_request_numbers\": [{\"sr_id\": \"77777\", \"priority_number\": \"2\", \"priority_name\": \"Routine\", \"work_order_id\": \"WO-77777\"}], \"instructions\": \"Your service request SR-77777 was created for the reported issue. Please note there may be a short delay before it appears in the portal.\", \"action_taken\": \"service_request_created\"}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    },
+    "priority": 1
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/facilities-resident-thinker/v2/thinker",
+      "body": {
+        "type": "REGEX",
+        "regex": "(?is).*((show|list|check|view|see|display|retrieve|fetch|pull|get|query|what|do i have|are there|inquiring|asking).*(service|maintenance|ticket|repair|request|work order)s?|(open|active|pending|current|outstanding|submitted)\\s*(service|maintenance)?\\s*(request|ticket|issue|work order)s?).*"
+      }
+    },
+    "httpResponse": {
+      "body": "{\"self_service_available\": false, \"service_request_numbers\": [{\"sr_id\": \"12345\", \"priority_number\": \"2\", \"priority_name\": \"High\", \"work_order_id\": \"WO-12345\"}, {\"sr_id\": \"67890\", \"priority_number\": \"3\", \"priority_name\": \"Routine\", \"work_order_id\": \"WO-67890\"}], \"instructions\": \"Here are your open service requests:\\n\\n- SR-12345: Kitchen faucet leak (Created Jan 15, 2025) \\u2014 In Progress\\n  - Summary: Leaking kitchen faucet reported by resident. Technician notes: Scheduled for repair on Jan 18.\\n\\n- SR-67890: Air conditioning not cooling (Created Jan 10, 2025) \\u2014 Pending\\n  - Summary: AC unit not cooling properly. Technician notes: None provided.\", \"action_taken\": \"query_service_requests\"}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    },
+    "priority": 2
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/facilities-resident-thinker/v2/thinker",
+      "body": {
+        "type": "REGEX",
+        "regex": "(?is).*((broken|damaged|damage|leak|leaking|drip|dripping|clogged|not working|not cooling|won't|isn't|torn|stain|hole|flickering|loose|mold|noise|beeping|stuck|malfunctioning|pest|stopped working|needs repair|needs attention).{0,40}(faucet|sink|toilet|disposal|dishwasher|ac|air condition|heater|refrigerator|oven|drain|detector|ceiling|carpet|door|window|light|wall|thermostat|flooring|bathroom|kitchen|bedroom|living room|unit|apartment)|(faucet|sink|toilet|disposal|dishwasher|ac|air condition|heater|refrigerator|oven|drain|detector|ceiling|carpet|door|window|light|wall|thermostat|flooring|bathroom|kitchen).{0,40}(broken|damaged|damage|leak|leaking|drip|dripping|clogged|not working|not cooling|won't|isn't|torn|stain|hole|flickering|loose|mold|noise|beeping|stuck|malfunctioning|pest|stopped working|needs repair)).*"
+      }
+    },
+    "httpResponse": {
+      "body": "{\"self_service_available\": false, \"service_request_numbers\": [{\"sr_id\": \"77777\", \"priority_number\": \"2\", \"priority_name\": \"Routine\", \"work_order_id\": \"WO-77777\"}], \"instructions\": \"Your service request SR-77777 was created for the reported issue. Please note there may be a short delay before it appears in the portal.\", \"action_taken\": \"service_request_created\"}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    },
+    "priority": 3
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/facilities-resident-thinker/v2/thinker",
+      "body": {
+        "type": "REGEX",
+        "regex": "(?is).*(healthcheck).*"
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": "{\"self_service_available\": false, \"service_request_numbers\": [], \"instructions\": \"Healthcheck OK\", \"action_taken\": null}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    },
+    "priority": 10
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/facilities-resident-thinker/v2/thinker"
+    },
+    "httpResponse": {
+      "body": "{\"self_service_available\": false, \"service_request_numbers\": [{\"sr_id\": \"12345\", \"priority_number\": \"2\", \"priority_name\": \"High\", \"work_order_id\": \"WO-12345\"}, {\"sr_id\": \"67890\", \"priority_number\": \"3\", \"priority_name\": \"Routine\", \"work_order_id\": \"WO-67890\"}], \"instructions\": \"Here are your open service requests:\\n\\n- SR-12345: Kitchen faucet leak (Created Jan 15, 2025) \\u2014 In Progress\\n  - Summary: Leaking kitchen faucet reported by resident. Technician notes: Scheduled for repair on Jan 18.\\n\\n- SR-67890: Air conditioning not cooling (Created Jan 10, 2025) \\u2014 Pending\\n  - Summary: AC unit not cooling properly. Technician notes: None provided.\", \"action_taken\": \"query_service_requests\"}",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "values": [
+            "application/json"
+          ]
+        }
+      ]
+    },
+    "priority": 100
+  }
+]

@@ -1,0 +1,3 @@
+### Warm cache for property 123
+POST {{endpoint}}/v1/cache/property/123
+Content-Type: application/json

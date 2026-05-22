@@ -1,0 +1,61 @@
+flowchart TD
+ subgraph s2["Agent Leasing"]
+        API["API"]
+        A("Applicant Agent")
+        TOOLS("Local & Cached Tools")
+        MEM["Memory"]
+  end
+ subgraph s3["Channels"]
+    direction TB
+        GAI("CAI Gen AI Service")
+        LL["Loft Leasing Chatbot"]
+        UC["Doorway / Unified Communications"]
+        n1["SMS"]
+        n2["Email"]
+        n3["Voice"]
+  end
+ subgraph s4["Tools & Data Sources"]
+        MCP("MCP")
+        LDP["Lumina Data Platform (Google Big Query)"]
+        KNCK["Knock APIv2"]
+  end
+    API --- A
+    A --- MCP
+    A -- uses --- TOOLS
+    TOOLS ---> MCP
+    GAI -- route applicant --> API
+    MCP --> LDP
+    LL --> UC
+    A --> LLM["LLM"]
+    MEM --> redis["Redis"]
+    API -- uses --> MEM
+    UC -- Kong --> GAI
+    n1 --> UC
+    n2 --> UC
+    n3 --> UC & API & n4["Twilio"]
+    n4 --> API
+
+    MEM@{ shape: rounded}
+    LL@{ shape: rounded}
+    UC@{ shape: rounded}
+    n1@{ shape: rounded}
+    n2@{ shape: rounded}
+    n3@{ shape: rounded}
+    LDP@{ shape: rounded}
+    KNCK@{ shape: rounded}
+    LLM@{ shape: rounded}
+    redis@{ shape: rounded}
+    n4@{ shape: rounded}
+    style API fill:#C8E6C9
+    style A fill:#C8E6C9
+    style TOOLS fill:#C8E6C9
+    style MEM fill:#C8E6C9
+    style GAI fill:#BBDEFB
+    style LL fill:#BBDEFB
+    style UC fill:#BBDEFB
+    style n1 fill:#FFF9C4
+    style n2 fill:#FFF9C4
+    style n3 fill:#FFF9C4
+    style MCP fill:#FFCDD2
+    style LDP fill:#FFCDD2
+    style KNCK fill:#FFCDD2

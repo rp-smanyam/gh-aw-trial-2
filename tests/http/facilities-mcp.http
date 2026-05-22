@@ -1,0 +1,19 @@
+### HTTP Request File for Unified Login
+### The requests here are formatted to work with both JetBrains IDEs and VS Code.
+
+@tokenEndpoint = https://www-sat.realpage.com/login/identity/connect/token
+@clientId = ai-agent-facilities
+
+@clientSecret = {{$dotenv FACILITIES_MCP_AUTH_CLIENT_SECRET}}
+@scopes = facilitiescommonapi facilitiesinspectionsapi facilitiesservicerequestsapi
+
+############################################################
+# Get the token
+############################################################
+POST {{tokenEndpoint}}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id={{clientId}}
+&client_secret={{clientSecret}}
+&scope={{scopes}}

@@ -1,0 +1,9 @@
+graph TD
+    API --> A(Agent)
+    A --- CLI
+    A <--> LLM
+    A ---|uses| P(Prompt)
+    A ---|uses| G(Guardrails)
+    A ---|uses| T(Local & Cached Tools)
+    T ---> M
+    A --- M(MCP)

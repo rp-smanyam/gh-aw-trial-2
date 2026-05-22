@@ -1,0 +1,37 @@
+POST http://127.0.0.1:8000/v1/agent/ask
+Content-Type: application/json
+
+{
+  "product": "resident_one_chat",
+  "prompt": "hello",
+  "chat_session_id": "1",
+  "request_id": "2",
+  "product_info": {
+    "source": "LL",
+    "knock_property_id": "21521",
+    "knock_resident_id": "1631255",
+    "uc_portal_base_url": "https://cassidysouth.qa2.loftliving.com",
+    "ab_resident_id": {
+      "id": "123",
+      "source": "OS"
+    },
+    "uc_company_id": {
+      "id": "7641926",
+      "source": "OS"
+    },
+    "uc_property_id": {
+      "id": "7641954",
+      "source": "OS"
+    },
+    "uc_resident_member_id": {
+      "id": "110",
+      "source": "OS"
+    },
+    "uc_resident_household_id": {
+      "id": "105",
+      "source": "OS"
+    }
+  }
+}
+
+###

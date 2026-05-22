@@ -1,0 +1,62 @@
+graph TD
+
+subgraph Centered channels["Channels"]
+direction TB
+SMS
+Email
+Chat
+Voice
+end
+
+subgraph voice["Resident Agent Voice"]
+direction TB
+CA2(Agents SDK - Voice Responder Agent)
+CA2_PROMPT(Voice Prompt)
+CA2 -.- CA2_PROMPT
+end
+
+subgraph text["Resident Agent"]
+direction TB
+CA(Agents SDK - Resident Agent)
+CA_PROMPT(Resident Prompt)
+CA -.- CA_PROMPT
+end
+
+subgraph mcp1["MCP Server 1"]
+direction TB
+CAT1(MCP Tool1)
+CAT2(MCP Tool2)
+end
+
+subgraph mcp2["MCP Server 2"]
+direction TB
+CAT3(MCP Tool3)
+CAT4(MCP Tool4)
+end
+
+
+ASK(REST API - /v1/agent/ask)
+STREAMING(REST API - /v1/agent/streaming)
+INC(Websocket API - /media-stream/websocket)
+WS(websockets)
+
+
+SMS --> ASK
+Email --> ASK
+Chat --> ASK
+Chat --> STREAMING
+Voice --> INC
+
+ASK --> CA
+STREAMING --> CA
+INC --> CA2
+
+WS <--> CA2
+Voice <--> WS
+
+CA2 --> |agent-as-tool| CA
+
+CA -.-|mcp tool| CAT1
+CA -.-|mcp tool| CAT2
+CA -.-|mcp tool| CAT3
+CA -.-|mcp tool| CAT4

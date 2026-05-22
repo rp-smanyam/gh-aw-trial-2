@@ -1,0 +1,14 @@
+### Say hello
+POST {{askEndpoint}}
+Content-Type: application/json
+
+{
+  "product": "renter_ai_prospect",
+  "prompt": "hello",
+  "chat_session_id": "1",
+  "request_id": "2",
+  "product_info": {
+    "knock_prospect_id": "95946",
+    "knock_property_id": "21521"
+  }
+}

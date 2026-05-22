@@ -1,0 +1,83 @@
+graph TB
+    %% External Components
+    Internet[Internet]
+    GitHub[GitHub Actions<br/>CI/CD]
+    ECR[Amazon ECR<br/>Container Registry]
+    ParamStore[AWS Parameter Store<br/>Secrets]
+    CloudWatch[CloudWatch Logs]
+    ACM[AWS Certificate Manager<br/>SSL Certificate]
+
+    %% VPC and Networking
+    subgraph VPC[VPC - 10.0.0.0/16]
+        subgraph Public[Public Subnets]
+            IGW[Internet Gateway]
+            ALB[Application Load Balancer<br/>HTTP/HTTPS]
+            NAT1[NAT Gateway AZ1]
+            NAT2[NAT Gateway AZ2]
+        end
+
+        subgraph Private[Private Subnets]
+            subgraph ECS[ECS Cluster - Fargate]
+                subgraph TraefikService[Traefik Service]
+                    Traefik1[Traefik Container<br/>Port 80/8080<br/>256 CPU/512 MEM]
+                    Traefik2[Traefik Container<br/>Port 80/8080<br/>256 CPU/512 MEM]
+                end
+
+                subgraph AgentService[Agent-Leasing Service]
+                    Agent1[Agent-Leasing Container<br/>Port 8000<br/>512 CPU/1024 MEM]
+                    Agent2[Agent-Leasing Container<br/>Port 8000<br/>512 CPU/1024 MEM]
+                end
+
+                subgraph MCPService[MCP Service]
+                    MCP1[MCP Container<br/>Port 8042<br/>256 CPU/512 MEM]
+                    MCP2[MCP Container<br/>Port 8042<br/>256 CPU/512 MEM]
+                end
+
+                SD[Service Discovery<br/>alpha.local]
+            end
+        end
+    end
+
+    %% Connections
+    Internet -->|HTTPS:443<br/>HTTP:80| ALB
+    ALB -->|Target Group| Traefik1
+    ALB -->|Target Group| Traefik2
+
+    Traefik1 -->|Route by Host| Agent1
+    Traefik1 -->|Route by Host| Agent2
+    Traefik2 -->|Route by Host| Agent1
+    Traefik2 -->|Route by Host| Agent2
+
+    Agent1 -->|http://mcp.alpha.local:8042| MCP1
+    Agent1 -->|http://mcp.alpha.local:8042| MCP2
+    Agent2 -->|http://mcp.alpha.local:8042| MCP1
+    Agent2 -->|http://mcp.alpha.local:8042| MCP2
+
+    %% External Connections
+    GitHub -->|OIDC Auth| ECR
+    ECS -->|Pull Images| ECR
+    ECS -->|Secrets| ParamStore
+    ECS -->|Logs| CloudWatch
+    ALB -->|SSL/TLS| ACM
+
+    %% Outbound from Private Subnets
+    Agent1 -.->|OpenAI API<br/>Langsmith API| NAT1
+    Agent2 -.->|OpenAI API<br/>Langsmith API| NAT2
+    NAT1 -.-> IGW
+    NAT2 -.-> IGW
+    IGW -.-> Internet
+
+    %% Styling
+    classDef vpc fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef public fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef private fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef container fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef external fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef network fill:#e3f2fd,stroke:#0d47a1,stroke-width:2px
+
+    class VPC vpc
+    class Public,ALB,IGW,NAT1,NAT2 public
+    class Private,ECS private
+    class Traefik1,Traefik2,Agent1,Agent2,MCP1,MCP2 container
+    class Internet,GitHub,ECR,ParamStore,CloudWatch,ACM external
+    class SD network
