@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "last_run_utc": "2026-05-22T11:09:00Z",
+  "last_run_id": "26284286573",
+  "monthly_activity_issue": {
+    "month": "2026-05",
+    "number": null,
+    "url": null,
+    "note": "Created in this run; number filled in after issue is created downstream by safe-outputs."
+  },
+  "tasks_last_run": {
+    "task1_discover_commands": "2026-05-22T11:09:00Z",
+    "task2_identify_opportunities": "2026-05-22T11:09:00Z",
+    "task3_implement_improvements": null,
+    "task4_maintain_prs": null,
+    "task5_comment_on_issues": null,
+    "task6_measurement_infra": null,
+    "task7_monthly_summary": "2026-05-22T11:09:00Z"
+  },
+  "backlog_cursor": {
+    "opportunities": 0,
+    "issues_to_comment": 0
+  },
+  "checked_off_actions": [],
+  "commands": {
+    "build": null,
+    "test": null,
+    "benchmark": null,
+    "lint": null,
+    "format": null,
+    "notes": "Repo has no source code. No build/test/benchmark commands exist."
+  },
+  "perf_improver_prs": [],
+  "perf_improver_issues": []
+}
