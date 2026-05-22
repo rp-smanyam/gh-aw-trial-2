@@ -42,8 +42,15 @@ Possible future areas to monitor (only if code is added):
 - No `AGENTS.md` present.
 - `.lock.yml` files are generated from sibling `.md` workflow files — never edit `.lock.yml` directly; regenerate with `gh aw compile`.
 
-## Open PRs / Issues at first run
+## Open PRs / Issues
 
-- PR #1 (open): `Add daily-perf-improver agentic workflow` by rp-smanyam — the PR that introduces this workflow itself. Not a perf-improver PR.
-- No issues open.
-- No `performance` label exists yet in the repo.
+As of 2026-05-22 11:25 UTC:
+
+- PR #1: `Add daily-perf-improver agentic workflow` — **merged** 2026-05-22T11:21:52Z. Not a perf-improver PR.
+- No other PRs.
+- No open issues. The first run's `create_issue` for the monthly activity summary evidently did not materialize (no issue with that title exists). Re-queued in run 26284971633; verify on next run.
+- No `performance` label exists in the repo.
+
+## Cross-run lessons
+
+- **Verify safe-output side effects on next run.** Memory marked the monthly activity issue as "Created in this run; number filled in after issue is created downstream" — but the issue never appeared. Always re-check repo state at the start of a run against what memory claims, and treat unset `number` fields as "unverified, possibly missing".
