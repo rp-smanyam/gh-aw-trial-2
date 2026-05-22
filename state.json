@@ -1,50 +1,67 @@
 {
   "schema_version": 1,
-  "last_run_utc": "2026-05-22T11:25:00Z",
-  "last_run_id": "26284971633",
+  "last_run_utc": "2026-05-22T11:35:00Z",
+  "last_run_id": "26285308600",
   "monthly_activity_issue": {
     "month": "2026-05",
     "number": null,
     "url": null,
-    "note": "Re-queued via create_issue in run 26284971633 after the first run's create_issue did not materialize. Verify number on next run by searching open issues for '[perf-improver] Monthly Activity 2026-05'."
+    "note": "Created in run 26285308600 with title prefix '[perf-improver] Monthly Activity 2026-05' (prefix auto-added by safeoutputs). Verify number on next run by searching open issues; prior two attempts in runs 26284286573 and 26284971633 did not materialize. Track checked-off items in checked_off_actions."
   },
   "tasks_last_run": {
-    "task1_discover_commands": "2026-05-22T11:09:00Z",
-    "task2_identify_opportunities": "2026-05-22T11:09:00Z",
-    "task3_implement_improvements": null,
+    "task1_discover_commands": "2026-05-22T11:35:00Z",
+    "task2_identify_opportunities": "2026-05-22T11:35:00Z",
+    "task3_implement_improvements": "2026-05-22T11:35:00Z",
     "task4_maintain_prs": null,
     "task5_comment_on_issues": null,
     "task6_measurement_infra": null,
-    "task7_monthly_summary": "2026-05-22T11:25:00Z"
+    "task7_monthly_summary": "2026-05-22T11:35:00Z"
   },
   "backlog_cursor": {
-    "opportunities": 0,
+    "opportunities": 1,
     "issues_to_comment": 0
   },
   "checked_off_actions": [],
   "commands": {
-    "build": null,
-    "test": null,
-    "benchmark": null,
-    "lint": null,
-    "format": null,
-    "notes": "Repo has no source code. No build/test/benchmark commands exist."
+    "build": "uv sync",
+    "test_unit": "uv run pytest tests/unit",
+    "test_full": "uv run pytest tests --cov --cov-report term --cov-fail-under=85 -n 6",
+    "lint": "uv run ruff check",
+    "format": "uv run ruff check --fix && uv run ruff format",
+    "load_test": "scripts/run_locust.sh",
+    "notes": "Python >=3.13.1,<3.14 required. Agent env has Python 3.14.5 — uv sync fails. Standalone ruff (pip --user) works fine for lint/format validation. Use `ruff format --check <file>` to verify formatting on a single file without rewriting."
   },
-  "perf_improver_prs": [],
-  "perf_improver_issues": [],
+  "perf_improver_prs": [
+    {
+      "title_prefix_expected": "[perf-improver] perf: pre-compile regex patterns in verify_resident_identity",
+      "branch": "perf-assist/precompile-verify-resident-regexes",
+      "run_id": "26285308600",
+      "created_utc": "2026-05-22T11:35:00Z",
+      "status": "created_pending_ci",
+      "summary": "Hoisted 11 regex patterns in verify_resident_identity.py to module-level re.compile(). ~2.6x speedup on normalize_unit_number, ~2.2x on extract_birth_year. Parity verified across 60 cases. v2 sibling already uses this pattern."
+    }
+  ],
+  "perf_improver_issues": [
+    {
+      "expected_title": "[perf-improver] Monthly Activity 2026-05",
+      "run_id": "26285308600",
+      "created_utc": "2026-05-22T11:35:00Z",
+      "status": "creation_requested_pending_verification",
+      "labels": ["performance", "automation"]
+    }
+  ],
   "repo_snapshot": {
-    "checked_utc": "2026-05-22T11:25:00Z",
-    "has_source_code": false,
-    "file_count_outside_dotgit": 8,
-    "files": [
-      "README.md",
-      ".gitattributes",
-      ".vscode/settings.json",
-      ".github/mcp.json",
-      ".github/agents/agentic-workflows.agent.md",
-      ".github/workflows/copilot-setup-steps.yml",
-      ".github/workflows/daily-perf-improver.md",
-      ".github/workflows/daily-perf-improver.lock.yml"
-    ]
-  }
+    "checked_utc": "2026-05-22T11:35:00Z",
+    "has_source_code": true,
+    "note": "Major code drop landed between runs. Python 3.13-only agent-leasing FastAPI + OpenAI Agents SDK service. ~168 .py files in src/, ~216 in tests/. AGENTS.md is the canonical guide.",
+    "key_directories": ["src/agent_leasing/", "tests/", "scripts/", "infra/", "lambdas/", "docs/", "aspire-app/"]
+  },
+  "perf_opportunities_backlog": [
+    {"id": 1, "file": "src/agent_leasing/agent/tools/verify_resident_identity.py", "status": "DONE in run 26285308600", "note": "pre-compile regex patterns"},
+    {"id": 2, "file": "src/agent_leasing/util/voice_text_normalizer.py:140", "status": "open", "note": "_NORMALIZERS lambda wrappers can be direct function refs"},
+    {"id": 3, "file": "src/agent_leasing/util/helpers.py:54-58", "status": "open", "note": "resolve_greeting_placeholders: 3 sequential .replace() — consider single str.translate or regex"},
+    {"id": 4, "file": "src/agent_leasing/agent/tools/mcp_post_processors.py:139-140", "status": "open", "note": "add_currency chains 2 .replace() per Decimal"},
+    {"id": 5, "file": "src/agent_leasing/services/input_sanitizers.py:108-110", "status": "open", "note": "sanitize_urls loops str.replace per URL — O(N×len) on growing string"},
+    {"id": 6, "file": "src/agent_leasing/util/otel_configuration.py:110", "status": "low-priority", "note": "Two chained .replace() to strip scheme"}
+  ]
 }
